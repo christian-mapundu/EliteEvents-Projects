@@ -1,0 +1,95 @@
+.body-container{
+    margin: 0;
+    padding: 0;
+}
+/* Header Section information */
+.menu-container{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.wayfinding{
+    background: linear-gradient(135deg, #FFD700, #FFC300);
+    margin: 0 auto;
+    padding: 10px;
+}
+.nav-link{
+    text-decoration: none;
+    padding: 8px 15px; /* This will need to be changed for small screens*/
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    color: #333;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+.nav-item{
+    padding: 5px;
+    margin-right: 25px;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style: none;
+    text-align: center;
+}
+.nav-link:hover{
+    cursor: pointer;
+    color: red;
+}
+.Elite-hero-section{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+.Elite-hero-section img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+#main-heading{
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    Color: rgb(219, 21, 163);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.item-1{
+    text-align: center;
+    display: flex;
+    gap: 15px;
+}
+.group-image{
+    background-color: rgb(239, 161, 161);
+    border-radius: 25%;
+}
+
+
+
+
+
+
+
+/* Footer section information */
+footer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 15px;
+}
+footer div{
+    width: 100%;
+}
+.logo-icons img{
+    width: 50px;
+}
+footer ul{
+    /* list-style-type: disc; */
+    list-style: none;
+}
+Ul li{
+    /* padding: 5px; */
+}
