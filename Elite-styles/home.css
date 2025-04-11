@@ -89,6 +89,7 @@ footer div{
 footer ul{
     /* list-style-type: disc; */
     list-style: none;
+    align-items: center;
 }
 /* Ul li{ */
     /* padding: 5px; */

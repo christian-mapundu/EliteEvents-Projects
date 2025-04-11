@@ -3,62 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="" defer></script>
-    <link rel="stylesheet" href="Elite-styles/home.css">
     <link rel="stylesheet" href="Elite-styles/events.css">
+    <title>Elite Times - Events</title>
+    <style>
+        /* Basic Reset (You might have this in a separate common CSS file) */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
 
-    <title>Elite Times</title>
+        ul {
+            list-style: none;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        .body-container{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section (Similar to index.html) */
+        .menu-container{
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .wayfinding{
+            background: linear-gradient(135deg, #FFD700, #FFC300);
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .nav-list{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item{
+            padding: 5px;
+            margin-right: 25px;
+            font-size: 24px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            list-style: none;
+            text-align: center;
+        }
+        .nav-link{
+            text-decoration: none;
+            display: block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+        .nav-link:hover{
+            cursor: pointer;
+            color: red;
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-item {
+                margin-right: 0;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Event Image Gallery Section */
+        .event-gallery-section {
+            padding: 20px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .scrolling-images-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            gap: 15px; /* Space between images */
+            padding-bottom: 15px; /* Space for scrollbar */
+        }
+
+        .scrolling-images-container img {
+            max-height: 300px; /* Adjust as needed */
+            width: auto; /* Maintain aspect ratio */
+            display: inline-block; /* Prevent images from stacking by default */
+        }
+
+        .stacked-images-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center; /* Center stacked images horizontally */
+            margin-top: 20px;
+        }
+
+        .stacked-images-container img {
+            max-width: 80%; /* Adjust as needed */
+            height: auto;
+            display: block; /* Ensure images stack properly */
+        }
+
+        /* Footer Section (Similar to index.html) */
+        footer{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            flex-wrap: wrap;
+            margin-top: 30px; /* Add some space above the footer */
+        }
+        footer div{
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            footer div {
+                width: 100%;
+            }
+        }
+        .logo-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .logo-icons img{
+            width: 40px;
+            height: auto;
+        }
+        footer ul{
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            padding: 5px 0;
+        }
+        .footer-heading {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        footer p {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body class="body-container">
-    <header class="menu-container wayfinding">
-        <nav id="nav-menu">
-          <ul class="nav-list">
-            <li class="nav-item item1"><a href="index.html" class="nav-link">Elite Home</a></li>
-            <li class="nav-item item2"><a href="events.html" class="nav-link">Events</a></li>
-            <li class="nav-item item3"><a href="catering.html" class="nav-link">Catering</a></li>
-            <li class="nav-item item4"><a href="hires.html" class="nav-link">Hires</a></li>
-            <li class="nav-item item5"><a href="contact-us.html" class="nav-link">Contact US</a></li>
-          </ul>
-        </nav>
+    <header class="menu-container">
+        <div class="wayfinding">
+            <nav id="nav-menu">
+              <ul class="nav-list">
+                <li class="nav-item item1"><a href="index.html" class="nav-link">Elite Home</a></li>
+                <li class="nav-item item2"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item item4"><a href="hires.html" class="nav-link">Hires</a></li>
+                <li class="nav-item item5"><a href="contact.html" class="nav-link">Contact US</a></li>
+              </ul>
+            </nav>
+        </div>
       </header>
-    <main class="main-container">
-        <section class="section one1">
-            <h1 id="">Elite Events</h1>
-        </section>
-        <section>
-          <div class="">
-            <div class="">
-              <div id="">
-                
-              </div>
-              <div >
+    <main class="main-container event-gallery-section">
+        <h2 class="gallery-title">Event Highlights</h2>
 
-              </div>
+        <h3>News and People Involved</h3>
+        <div class="scrolling-images-container">
+            <img src="Elite-Images/hero-image-200.webp" alt="News Event 1">
+            <img src="Elite-Images/hero-image-200.webp" alt="People Involved 1">
+            <img src="Elite-Images/hero-image-200.webp" alt="News Event 2">
+            <img src="Elite-Images/hero-image-200.webp" alt="People Involved 2">
             </div>
-            <div class="">
 
+        <h3>Catering Services</h3>
+        <div class="scrolling-images-container">
+            <img src="Elite-Images/hero-image-600.webp" alt="Catering Setup 1">
+            <img src="Elite-Images/hero-image-600.webp" alt="Food Presentation 1">
+            <img src="Elite-Images/hero-image-600.webp" alt="Catering Staff">
             </div>
-            <div class="">
 
+        <h3>Room Decorations</h3>
+        <div class="stacked-images-container">
+            <img src="Elite-Images/hero-image-400.jpeg" alt="Room Decoration Detail 1">
+            <img src="Elite-Images/hero-image-200.webp" alt="Overall Room Decor 1">
             </div>
-          </div>
-        </section>
-        <section>
 
-        </section>
-        <section>
+        <h3>Preparation for an Activity</h3>
+        <div class="scrolling-images-container">
+            <img src="Elite-Images/hero-image-200.webp" alt="Activity Prep 1">
+            <img src="Elite-Images/hero-image-200.webp" alt="Equipment Setup">
+            </div>
 
-        </section>
+        <div class="stacked-images-container">
+            <img src="placeholder-activity1.jpg" alt="Activity in Progress 1">
+            <img src="placeholder-activity2.jpg" alt="Audience at Event">
+            </div>
+
     </main>
     <footer>
         <div>
+          <h3 class="footer-heading one">Information</h3>
           <p>copyright @ <span></span> Elite Events Solutions</p>
           <p>News</p>
           <p>Events</p>
           <p>Address</p>
         </div>
-        <div></div>
-        <div></div>
+        <div>
+          <h3 class="footer-heading two">Follow Us</h3>
+          <div class="logo-icons">
+            <a href="https://www.facebook.com/eventsolutionselite/"><img src="Elite-Images/footer/facebook_logo_icon.svg" alt="facebook-icon" loading="lazy"></a>
+            <a href="https://www.instagram.com/"><img src="Elite-Images/footer/instagram_logo_icon.svg" alt="instagram_logo_icon"></a>
+            <a href="https://www.youtube.com/"><img src="Elite-Images/footer/youtube_logo_icon.svg" alt="youtube_logo_icon"></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-heading three">Products</h3>
+          <ul>
+            <li>Tables</li>
+            <li>Chairs</li>
+            <li>Menu</li>
+            <li>Decor</li>
+            <li>Sound System</li>
+            <li>...</li>
+          </ul>
+        </div>
     </footer>
 </body>
 </html>

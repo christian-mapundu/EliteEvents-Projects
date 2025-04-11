@@ -5,30 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="" defer></script>
     <link rel="stylesheet" href="Elite-styles/home.css">
-    <link rel="stylesheet" href="Elite-styles/events.css">
-
     <title>Elite Times</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        .body-container{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section information */
+        .menu-container{
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .wayfinding{
+            background: linear-gradient(135deg, #FFD700, #FFC300);
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .nav-list{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item{
+            padding: 5px;
+            margin-right: 25px;
+            font-size: 24px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            list-style: none;
+            text-align: center;
+        }
+        .nav-link{
+            text-decoration: none;
+            display: block; /* Make the whole list item clickable */
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+        .nav-link:hover{
+            cursor: pointer;
+            color: red;
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-item {
+                margin-right: 0;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+            }
+        }
+
+        .Elite-hero-section{
+            position: relative;
+            width: 100%;
+            display: block; /* Changed from inline-block to block */
+        }
+        .Elite-hero-section img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        #main-heading{
+            font-size: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(219, 21, 163);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-align: center; /* Center the heading */
+            width: 100%; /* Ensure it spans the width */
+        }
+        @media (max-width: 768px) {
+            #main-heading {
+                font-size: 36px;
+            }
+        }
+
+        .div-container {
+            padding: 20px;
+        }
+
+        .item-1{
+            text-align: center;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            align-items: center; /* Vertically align items */
+            justify-content: center; /* Center items horizontally */
+            margin-bottom: 20px;
+        }
+        .group-image{
+            background-color: rgb(239, 161, 161);
+            border-radius: 25%;
+            overflow: hidden; /* Ensure image respects border-radius */
+        }
+        .group-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        #about-us {
+            flex: 1 1 400px; /* Grow, shrink, and initial width */
+            text-align: left;
+        }
+        .about {
+            flex: 0 1 300px; /* Don't grow much, initial width */
+        }
+
+        .item-2 {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .item-3 {
+            /* Add styles for item-3 here */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Footer section information */
+        footer{
+            display: flex;
+            justify-content: space-around; /* Distribute items evenly */
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            flex-wrap: wrap; /* Allow footer items to wrap */
+        }
+        footer div{
+            margin-bottom: 15px; /* Add spacing between footer sections */
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            footer div {
+                width: 100%; /* Stack footer sections on smaller screens */
+            }
+        }
+        .logo-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .logo-icons img{
+            width: 40px;
+            height: auto;
+        }
+        footer ul{
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            padding: 5px 0;
+        }
+        .footer-heading {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        footer p {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body class="body-container">
-    <header class="menu-container wayfinding">
-        <nav id="nav-menu">
-          <ul class="nav-list">
-            <li class="nav-item item1"><a href="index.html" class="nav-link">Elite Home</a></li>
-            <!-- <li class="nav-item item2"><a href="events.html" class="nav-link">Events</a></li> -->
-            <!-- <li class="nav-item item3"><a href="catering.html" class="nav-link">Catering</a></li> -->
-            <li class="nav-item item4"><a href="hires.html" class="nav-link">Hires</a></li>
-            <li class="nav-item item5"><a href="contact.html" class="nav-link">Contact US</a></li>
-          </ul>
-        </nav>
+    <header class="menu-container">
+        <div class="wayfinding">
+            <nav id="nav-menu">
+              <ul class="nav-list">
+                <li class="nav-item item1"><a href="index.html" class="nav-link">Elite Home</a></li>
+                <li class="nav-item item4"><a href="hires.html" class="nav-link">Hires</a></li>
+                <li class="nav-item item5"><a href="contact.html" class="nav-link">Contact US</a></li>
+                <li class="nav-item item3"><a href="events.html" class="nav-link">Events</a></li>
+              </ul>
+            </nav>
+        </div>
       </header>
     <main class="main-container">
-        <section class="Elite-Hero-section">
+        <section class="Elite-hero-section">
             <h1 id="main-heading">Elite Events</h1>
             <picture>
               <source srcset="Elite-Images/hero-image-728.webp" media="(min-width: 728px) and (max-width: 1200px)">
               <source srcset="Elite-Images/hero-image-600.webp" media="(min-width: 600px) and (max-width: 728px)">
               <source srcset="Elite-Images/hero-image-200.webp" media="(min-width: 200px) and (max-width: 399px)">
-              <!-- <source srcset="Elite-Images/hero-image-1200.webp" media="(min-width:729px) and (max-width: 1200px)"> -->
               <source srcset="Elite-Images/hero-image-400.jpeg" media="(min-width: 1201px)and (max-width: 2000px)">
               <img src="Elite-Images/hero-image-largest.webp" alt="hero-image" loading="Lazy">
             </picture>
@@ -39,11 +232,9 @@
               <div id="about-us">
                 <h2 class="first-heading">ABOUT ELITE EVENTS</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, officiis minus nemo maiores porro, laboriosam eum vero laudantium nihil tenetur magnam dicta, ab facilis ipsa? Error aspernatur praesentium vitae ducimus, nesciunt molestiae asperiores, accusantium veritatis provident nam nemo optio delectus fuga assumenda. Labore blanditiis architecto facilis nesciunt eveniet. Exercitationem delectus aliquam optio soluta. Unde debitis enim error iure placeat natus quam, delectus a, omnis aut dolorem nisi? Autem vel ea itaque, suscipit nemo tenetur, qui, eos ullam aspernatur fugit illum maxime assumenda tempora expedita saepe iste nesciunt voluptatum voluptatibus? Tempora esse alias voluptate minima sed laboriosam commodi aperiam! Quia explicabo, expedita qui provident ab maxime voluptatem dolore? Omnis optio ducimus laudantium eaque aperiam magnam quia minima, impedit dolorem labore sit doloribus. Iusto ipsum sit saepe, ipsa hic aspernatur cum! Eaque debitis recusandae voluptate minima soluta doloribus consequuntur corrupti repellendus libero, magnam sit necessitatibus provident commodi cum dolore dolores quo accusamus possimus earum adipisci velit ipsam et! Aperiam exercitationem eveniet fuga veritatis mollitia iusto voluptas iste. Nesciunt quaerat pariatur libero dolorum cumque reiciendis aspernatur ullam alias harum explicabo dignissimos hic eaque, dicta eos laborum? Accusamus molestias numquam tenetur hic adipisci mollitia aliquid, nisi aut eveniet ut corporis sit consequuntur harum sunt?</p>
-                <!-- This p can be populated using Javascript and json data or an api -->
-              </div>
+                </div>
               <div class="about group-image">
                 <img src="Elite-Images/hero-image.webp" alt="group photo" loading="lazy">
-
               </div>
             </div>
             <div class="div item-2">
@@ -51,16 +242,23 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptate ipsum doloremque ad libero, quo facere officiis consectetur laudantium, vero magnam ex similique beatae in dignissimos debitis! Reprehenderit perspiciatis, odio nobis ex pariatur quibusdam beatae accusantium explicabo alias non fugit voluptate aliquam eum fugiat deleniti quam, inventore modi et voluptatibus perferendis id quos at. Amet quasi sunt eius non aperiam pariatur omnis animi aspernatur dolores a suscipit nam possimus natus doloribus ipsam, neque unde? In.</p>
             </div>
             <div class="div item-3">
-
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Event Planning</li>
+                    <li>Catering Services</li>
+                    <li>Equipment Hire</li>
+                    <li>Venue Decoration</li>
+                    <li>Entertainment Booking</li>
+                    </ul>
             </div>
           </div>
         </section>
         <section>
-
-        </section>
+            <h2>Upcoming Events</h2>
+            </section>
         <section>
-
-        </section>
+            <h2>Gallery</h2>
+            </section>
     </main>
     <footer>
         <div>
@@ -80,14 +278,14 @@
         </div>
         <div>
           <h3 class="footer-heading three">Products</h3>
-          <Ul>
+          <ul>
             <li>Tables</li>
             <li>Chairs</li>
             <li>Menu</li>
             <li>Decor</li>
             <li>Sound System</li>
             <li>...</li>
-          </Ul>
+          </ul>
         </div>
     </footer>
 </body>
